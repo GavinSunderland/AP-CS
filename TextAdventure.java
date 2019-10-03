@@ -1,3 +1,5 @@
+// The text adventure game of the century
+
 import java.util.Scanner;
 
 public class TextAdventure {
