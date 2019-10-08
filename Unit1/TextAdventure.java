@@ -7,6 +7,7 @@ public class TextAdventure {
 	
 	String Decision1 = "";
 	String Decision2 = "";
+	String Decision3 = "";
 	
     String input = "";
 	
@@ -83,20 +84,52 @@ public class TextAdventure {
 			System.out.println("The police officer acompanying you forgot to handcuf you.");
 			System.out.println("There is a nearby car with its door open and keys laying on the seat. How convenient!");
 			
-			System.out.print("do you assualt the police officer and run away on foot, hopefully not be to noticed by anyone (a), or do you dash to the car and escape with style (b)?");
+			System.out.print("do you assualt the police officer and run away on foot, hopefully not be to noticed by anyone (a), or do you dash to the car and escape with style (b)?\n");
 			Decision2 = Keyboard.nextLine();
 			
 			if (Decision2.equals("a")){
 				felonies ++;
 				System.out.println("you have commited " + felonies + " felonies\n");
 				System.out.println("You attack the police officer. However, he is not fazed and handcufs you on the spot.");
-				System.out.print("You are tried for \"assualting a police officer and pumping your own gas\"");
+				System.out.print("You are tried in court for \"aggravated assualt\" and \"pumping your own gas\" and are sentenced to 1 year in prison, congratulations..\n");
+				
+				Game = false; 
 				
 			}
 			
 			if (Decision2.equals("b")){
 				felonies ++;
 				System.out.println("you have commited " + felonies + " felonies\n");
+				
+				System.out.println("you dash to the car, frantically start it and hit the gas...\n");
+				System.out.println("you forgot the parking break...you undo the parking break and then hit the gas.");
+				System.out.println("the police officer runs in not so hot pursuit and yells something, it is probably not a big deal.\n");
+				System.out.println("As you drive away, notice that the car's break pads are completely worn, the wheels are near empty, the oil is empty and the gas is empty. Wow, how could that happen!");
+				System.out.println("Once you notice this, you also notice that you have trippled the speed limit.");
+				System.out.println("You immediately \"accidentally\" careen into a inconviently placed building, breaking 3 of your not so useful fingers.\n");
+				felonies ++;
+				
+				System.out.println("you have commited " + felonies + " felonies\n");
+				
+				System.out.println("Great, now you are in deep troule...ok, what do you do now...");
+				System.out.println("Do you run on foot away from the scene(a) or do you leave a sticky note on the crumbling face of the local shop saying \"sorry\"(b)");
+				
+				Decision3 = Keyboard.nextLine();
+				
+				if (Decision3.equals(a)){
+				System.out.println("wow, you didn't even leave a sorry note, what kind of monster are you?");
+				
+				}
+				
+				
+				if Decision3.equals(b)){
+				System.out.println("wow, like that will help with over $30,000 in repair costs!");
+				
+				}
+				
+				
+				
+			
 				
 				
 				
