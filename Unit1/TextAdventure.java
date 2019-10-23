@@ -91,7 +91,8 @@ public class TextAdventure {
 				felonies ++;
 				System.out.println("you have commited " + felonies + " felonies\n");
 				System.out.println("You attack the police officer. However, he is not fazed and handcufs you on the spot.");
-				System.out.print("You are tried in court for \"aggravated assualt\" and \"pumping your own gas\" and are sentenced to 1 year in prison, congratulations..\n");
+				System.out.println("You are tried in court for \"aggravated assualt\" and \"pumping your own gas\"");
+				System.out.println("You are sentenced to 1 year in prison, congratulations..\n");
 				
 				Game = false; 
 				
@@ -100,7 +101,6 @@ public class TextAdventure {
 			if (Decision2.equals("b")){
 				felonies ++;
 				System.out.println("you have commited " + felonies + " felonies\n");
-				
 				System.out.println("you dash to the car, frantically start it and hit the gas...\n");
 				System.out.println("you forgot the parking break...you undo the parking break and then hit the gas.");
 				System.out.println("the police officer runs in not so hot pursuit and yells something, it is probably not a big deal.\n");
@@ -116,16 +116,20 @@ public class TextAdventure {
 				
 				Decision3 = Keyboard.nextLine();
 				
-				if (Decision3.equals(a)){
-				System.out.println("wow, you didn't even leave a sorry note, what kind of monster are you?");
+			if (Decision3.equals("a")){
+			System.out.println("wow, you didn't even leave a sorry note, what kind of monster are you?");
+			System.out.println("you know what, I give up on you, you have commited " +felonies+ " felonies already!");
 				
-				}
+			Game = false; 
+			}
 				
 				
-				if Decision3.equals(b)){
-				System.out.println("wow, like that will help with over $30,000 in repair costs!");
+			if (Decision3.equals("b")){
+			System.out.println("wow, like that will help with over $30,000 in repair costs!");
+			System.out.println("you know what, I give up on you, you have commited " +felonies+ " felonies already!");
 				
-				}
+			Game = false; 
+			}
 				
 				
 				
@@ -156,7 +160,7 @@ public class TextAdventure {
 		
 		else {
 			HeartAttack = false;
-			break;
+			
 		}
 	}
    
