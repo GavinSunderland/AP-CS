@@ -71,14 +71,25 @@ public class  Shapes {
 			System.out.print("* ");
 		
 		}	
-		
-	for (int i = 0; i )
-		
-		
 	System.out.println();
+	}
+	
+	
+	for(int ii = size-1; ii >= 1; ii--) {
+		for(int iii = ii; iii >= 1; iii--) {
+			System.out.print("* ");
+		}
+	System.out.println();
+	}
+
+  
+	
+		
+		
+	
 
 	
-	}
+	
 	}
 	
   }
