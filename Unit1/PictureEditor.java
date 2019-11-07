@@ -39,7 +39,10 @@ public class PictureEditor {
         drawSquare();
 		pic.show();
 		}	
-		
+		if (Answer.equals("f"))	{
+		mirror();
+		pic.show();
+		}	
 		
             
     }
@@ -107,7 +110,7 @@ public class PictureEditor {
         
     }
     
-    public static void drawTriangleTop() {
+    public static void drawTriangle() {
         
     }
     
@@ -251,10 +254,41 @@ for ( int y = 0; y <= 800; y ++) {
 	
 	}
 }
+}
 
 
-
-
+public static void mirror() {
+	for (int x = 0; x < 639; x ++) {
+	for (int y = 0; y < 427; y ++ ){
+				
+				Color color = pic.get(x,y);
+				int red = color.getRed();
+				int green = color.getGreen();
+				int blue = color.getBlue();
+			
+				int pos = 852 - y;
+					
+				pic.set(x, pos, color);
+			
+			
+			
+			
+			
+			
+			
+			
+		}
+	}
 }
 }
+
+
+
+
+
+
+
+
+
+
 
