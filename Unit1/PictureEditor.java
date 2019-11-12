@@ -43,9 +43,34 @@ public class PictureEditor {
 		mirror();
 		pic.show();
 		}	
+		if (Answer.equals("g"))	{
+		drawTriangle();
+		pic.show();
+		}	
+        if (Answer.equals("h"))	{
+		GrayScale();
+		pic.show();
+		}	   
+		if (Answer.equals("i"))	{
+		LetterBox();
+		pic.show();
+		}	   
+		if (Answer.equals("j"))	{
+		drawDarkerLine();
+		TintColor();
+		pic.show();
+		Nuke();
+		SortByColor();
+		drawSquare();
+		mirror();
+		drawTriangle();
+		GrayScale();
+		LetterBox();
 		
-            
-    }
+		}	   
+		
+
+   }
     
     
     public static void printPixelColors() {
@@ -106,20 +131,77 @@ public class PictureEditor {
 	
     
     
-    public static void drawCenteredSquare() {
-        
-    }
+    public static void LetterBox() {
+        for (int y = 0; y < 50; y ++){
+			for (int x = 0; x < 639; x ++){
+			Color color = pic.get(x,y);
+			int red = color.getRed();
+			int green = color.getGreen();
+			int blue = color.getBlue();
+			
+			red = 0;
+			green = 0;
+			blue = 0;
+			
+			pic.set(x,y,color);
+			}
+		}
+		
+		for (int y = 852; y > 802; y --){
+			for (int x = 0; x < 639; x ++){
+			Color color = pic.get(x,y);
+			int red = color.getRed();
+			int green = color.getGreen();
+			int blue = color.getBlue();
+			
+			red = 0;
+			green = 0;
+			blue = 0;
+			
+			pic.set(x,y,color);
+			}
+		}
+   }
     
     public static void drawTriangle() {
-        
-    }
     
-
+	   for (int y = 50; y < 100; y ++){
+			for (int x = 50; x < y; x ++){
+					Color color = pic.get(x,y);
+					
+					int red1 = 190;
+					int blue1 = 151;
+					int green1 = 100;
+					color = new Color(red1, blue1, green1);
+				
+				pic.set(x,y,color);
+				}
+    			
+			}
+	   }
+	
+    
+public static void GrayScale(){
+	for (int y = 0; y <=852; y++){
+		for (int x = 0; x <= 639; x ++){
+			Color color = pic.get(x,y);
+			int red = color.getRed();
+			int green = color.getGreen();
+			int blue = color.getBlue();
+			
+			int average = (red + green + blue)/3;
+			
+			Color gray = new Color(average,average,average);
+			
+			pic.set(x,y,gray);
+		}
+	}
+}
 
 public static void TintColor(){
-for ( int y = 0; y <= 853; y ++) {
+for ( int y = 0; y <= 852; y ++) {
 	
-	for( int x = 0; x <= 640; x ++) {
+	for( int x = 0; x <= 639; x ++) {
 	
 		Color Color = pic.get(x,y);
 		int red = Color.getRed();

@@ -2,7 +2,7 @@ import java.awt.Color;
 import java.util.Scanner;
 import java.util.Arrays;
 
-public class PictureEditor {
+public class PictureEditor1 {
 
 	static Picture pic;
 
@@ -11,15 +11,16 @@ public class PictureEditor {
 		String Answer = Keyboard.nextLine();
 
 		args = new String[1];
-<<<<<<< HEAD
+
         args[0] = "liz.jpg";
         
-        pic = new Picture(args[0]);
-        System.out.println(pic.width() + "w x " + pic.height()+"h");
-        
-		
-        printPixelColors();
-		
+       args[0] = "pig.jpg";
+
+		pic = new Picture(args[0]);
+		System.out.println(pic.width() + "w x " + pic.height() + "h");
+
+		printPixelColors();
+
 		if (Answer.equals("a"))	{
         drawDarkerLine();
 		pic.show();
@@ -44,7 +45,31 @@ public class PictureEditor {
 		mirror();
 		pic.show();
 		}	
-		
+		if (Answer.equals("g"))	{
+		drawTriangle();
+		pic.show();
+		}	
+        if (Answer.equals("h"))	{
+		GrayScale();
+		pic.show();
+		}	   
+		if (Answer.equals("i"))	{
+		LetterBox();
+		pic.show();
+		}	   
+		if (Answer.equals("j"))	{
+		drawDarkerLine();
+		TintColor();
+		pic.show();
+		Nuke();
+		SortByColor();
+		drawSquare();
+		mirror();
+		drawTriangle();
+		GrayScale();
+		LetterBox();
+		pic.show();
+		}
             
     }
     
@@ -59,80 +84,11 @@ public class PictureEditor {
         System.out.println("red:"+red+",green:"+green+",blue:"+blue);
     }
 
-    public static void drawDarkerLine() {
-        int y = 10;
-        int width = 100;
-        for (int x = 0; x < width; x++) {
-            int red = 10;
-            int blue = 10;
-            int green = 10;
-            Color pixelColor = new Color(red, green, blue);
-            pic.set(x, y, pixelColor);
-        }
-    }
+   
 
 
-    public static void drawSquare() {
-	int y = 100;
-	int x = 100;
-	int width = pic.width()-50;
-	int height = pic.height()-50;
-	int red = 190;
-	int blue = 151;
-	int green = 100;
-	
-=======
-		args[0] = "pig.jpg";
+   
 
-		pic = new Picture(args[0]);
-		System.out.println(pic.width() + "w x " + pic.height() + "h");
-
-		printPixelColors();
-
-		if (Answer.equals("a")) {
-			drawDarkerLine();
-			pic.show();
-		}
-		if (Answer.equals("b")) {
-			TintColor();
-			pic.show();
-		}
-		if (Answer.equals("c")) {
-			Nuke();
-			pic.show();
-		}
-		if (Answer.equals("d")) {
-			SortByBrightness();
-			pic.show();
-		}
-		if (Answer.equals("e")) {
-			drawSquare();
-			pic.show();
-		} 
-		if (Answer.equals("f")) {
-			SortByRed();
-			pic.show();
-		}
-		if (Answer.equals("g")) {
-			SortByGreen();
-			pic.show();
-		}
-		if (Answer.equals("h")) {
-			SortByBlue();
-			pic.show();
-		}
-
-	}
-
-	public static void printPixelColors() {
-		int x = 100;
-		int y = 100;
-		Color pixelColor = pic.get(x, y);
-		int red = pixelColor.getRed();
-		int green = pixelColor.getGreen();
-		int blue = pixelColor.getBlue();
-		System.out.println("red:" + red + ",green:" + green + ",blue:" + blue);
-	}
 
 	public static void drawDarkerLine() {
 		int y = 10;
@@ -155,7 +111,7 @@ public class PictureEditor {
 		int blue = 151;
 		int green = 100;
 
->>>>>>> 34b2147f3ba6db0f4c132862f993435f4b10b3ae
+
 		Color color = new Color(red, green, blue);
 
 		pic.set(x, y, color);
@@ -167,7 +123,7 @@ public class PictureEditor {
 				int red1 = 190;
 				int blue1 = 151;
 				int green1 = 100;
-<<<<<<< HEAD
+
 				
 	
 	
@@ -180,57 +136,52 @@ public class PictureEditor {
 	
     
     
-    public static void drawCenteredSquare() {
-        
-    }
     
-    public static void drawTriangle() {
-        
-    }
+   
     
 
 
-public static void TintColor(){
-for ( int y = 0; y <= 853; y ++) {
-	
-	for( int x = 0; x <= 640; x ++) {
-	
-		Color Color = pic.get(x,y);
-		int red = Color.getRed();
-		int green = Color.getGreen();
-		int blue = Color.getBlue();
-	
-	
-		int average = (red + green + blue)/3;
-	
-	if (average < 50){
-		
-		red *= 5;
-		
-		if (red > 255) red = 255;
-		
-		
-		Color = new Color(red,green,blue);
-	
-		pic.set(x,y,Color);
-	
-=======
 
-				pic.set(x, y, color);
-
-			}
-		}
->>>>>>> 34b2147f3ba6db0f4c132862f993435f4b10b3ae
-	}
 
 	public static void drawCenteredSquare() {
 
 	}
 
-	public static void drawTriangleTop() {
+	
 
-	}
-
+	 public static void LetterBox() {
+        for (int y = 0; y < 50; y ++){
+			for (int x = 0; x < 639; x ++){
+			Color color = pic.get(x,y);
+			int red = color.getRed();
+			int green = color.getGreen();
+			int blue = color.getBlue();
+			
+			red = 0;
+			green = 0;
+			blue = 0;
+			
+			pic.set(x,y,color);
+			}
+		}
+		
+		for (int y = 852; y > 802; y --){
+			for (int x = 0; x < 639; x ++){
+			Color color = pic.get(x,y);
+			int red = color.getRed();
+			int green = color.getGreen();
+			int blue = color.getBlue();
+			
+			red = 0;
+			green = 0;
+			blue = 0;
+			
+			pic.set(x,y,color);
+			}
+		}
+   }
+	
+	
 	public static void TintColor() {
 		for (int y = 0; y <= 853; y++) {
 
@@ -261,6 +212,42 @@ for ( int y = 0; y <= 853; y ++) {
 		}
 	}
 
+	  public static void drawTriangle() {
+    
+	   for (int y = 50; y < 100; y ++){
+			for (int x = 50; x < y; x ++){
+					Color color = pic.get(x,y);
+					
+					int red1 = 190;
+					int blue1 = 151;
+					int green1 = 100;
+					color = new Color(red1, blue1, green1);
+				
+				pic.set(x,y,color);
+				}
+    			
+			}
+	   }
+	
+	
+	public static void GrayScale(){
+	for (int y = 0; y <=852; y++){
+		for (int x = 0; x <= 639; x ++){
+			Color color = pic.get(x,y);
+			int red = color.getRed();
+			int green = color.getGreen();
+			int blue = color.getBlue();
+			
+			int average = (red + green + blue)/3;
+			
+			Color gray = new Color(average,average,average);
+			
+			pic.set(x,y,gray);
+		}
+	}
+}
+	
+	
 	public static void Nuke() {
 		for (int y = 0; y <= 800; y++) {
 
@@ -405,9 +392,9 @@ for ( int y = 0; y <= 853; y ++) {
 			}
 		}
 	}
-<<<<<<< HEAD
-}
-}
+
+
+
 
 
 public static void mirror() {
@@ -433,7 +420,6 @@ public static void mirror() {
 		}
 	}
 }
-}
 
 
 
@@ -445,7 +431,7 @@ public static void mirror() {
 
 
 
-=======
+
 	public static void SortByBlue() {
 		int width = pic.width();
 		int height = pic.height();
@@ -484,4 +470,3 @@ public static void mirror() {
 
 	}
 }
->>>>>>> 34b2147f3ba6db0f4c132862f993435f4b10b3ae
